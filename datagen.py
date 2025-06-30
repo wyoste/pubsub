@@ -13,7 +13,6 @@ print("Using topic path:", topic_path)
 with open(file) as filehandle:
     rd = csv.DictReader(filehandle, delimiter=',')
     for row in rd:
-        data_dict = {k: str(v) for k, v in row.items()}  # Ensure all values are strings
-        data = json.dumps(data_dict)
+        data = json.dumps(dict(row))
         print(f"Publishing: {data}")
         publisher.publish(topic_path, data=data.encode('utf-8'))
