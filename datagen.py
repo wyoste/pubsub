@@ -2,7 +2,7 @@ import json
 import csv
 from google.cloud import pubsub_v1
 
-project_name =  'nifty-matrix-463401-p3'
+project_name =  'yoste123'
 topic_name = 'sales'
 file = 'sales.csv'
 
