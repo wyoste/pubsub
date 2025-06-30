@@ -8,6 +8,7 @@ file = 'Sales-1.csv'
 
 publisher = pubsub_v1.PublisherClient()
 topic_path = publisher.topic_path(project_name, topic_name)
+print("Running Datagen.py! You salty Dog!")
 print("Using topic path:", topic_path)
 with open(file) as filehandle:
     rd = csv.DictReader(filehandle, delimiter=',')
