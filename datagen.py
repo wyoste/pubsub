@@ -4,7 +4,7 @@ from google.cloud import pubsub_v1
 
 project_name =  'nifty-matrix-463401-p3'
 topic_name = 'sales'
-file = 'Sales-1.csv'
+file = 'sales-1.csv'
 
 publisher = pubsub_v1.PublisherClient()
 topic_path = publisher.topic_path(project_name, topic_name)
@@ -16,3 +16,4 @@ with open(file) as filehandle:
         data = json.dumps(dict(row))
         print(f"Publishing: {data}")
         publisher.publish(topic_path, data=data.encode('utf-8'))
+        print("**published**")
